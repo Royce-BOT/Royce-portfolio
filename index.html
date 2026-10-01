@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Royce — Creative Developer</title>
+  <meta name="description"
+    content="Portfolio of John Royce — creative developer crafting immersive 3D web experiences.">
+
+  <!-- ============ FONTS ============ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- ============ DESIGN TOKENS / STYLES ============ -->
+  <link rel="stylesheet" href="styles.css">
+  <base target="_blank">
+</head>
+
+<body>
+
+  <!-- ============ LOADER ============ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-mark"></div>
+    <div class="loader-text">INITIALIZING SCENE</div>
+  </div>
+
+  <!-- ============ 3D CANVAS (fixed, persistent) ============ -->
+  <canvas id="webgl" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div id="progress" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a class="logo" href="#top">ROYCE<span>.</span>WEB</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="menu-btn" aria-label="Toggle menu">☰</button>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-content">
+        <span class="kicker reveal">Creative Developer &amp; Designer</span>
+        <h1 class="reveal" data-delay="1">I build <span class="grad">immersive</span><br>web experiences.</h1>
+        <p class="reveal" data-delay="2">Blending WebGL, motion design and clean engineering to craft digital products
+          that feel alive.</p>
+        <div class="btn-row reveal" data-delay="3">
+          <a class="btn btn-primary" href="#projects">View Projects →</a>
+          <a class="btn btn-ghost" href="#contact">Get in Touch</a>
+        </div>
+      </div>
+      <div class="scroll-hint">Scroll</div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="container">
+        <span class="kicker reveal">01 — About</span>
+        <h2 class="section-title reveal" data-delay="1">Design-minded Web Developer</h2>
+        <div class="about-grid" style="margin-top:44px">
+          <div class="portrait reveal">
+            <img src="image/image01.jpg" alt="Portrait of John Royce">
+          </div>
+          <div>
+            <p class="reveal">I'm Royce — a creative Web developer with 6+ years of experience shipping interactive
+              products for startups and studios. I live at the intersection of design and code, where shaders meet
+              systems.</p>
+            <div class="skill-groups">
+              <div class="skill-group reveal" data-delay="1">
+                <h3>Engineering</h3>
+                <div class="chips">
+                  <span class="chip">Laravel</span><span class="chip">PHP</span>
+                  <span class="chip">Three.js</span><span class="chip">WebGL / GLSL</span>
+                  <span class="chip">Node.js</span>
+                </div>
+              </div>
+              <div class="skill-group reveal" data-delay="2">
+                <h3>Design</h3>
+                <div class="chips">
+                  <span class="chip">Motion Design</span><span class="chip">Figma</span>
+                  <span class="chip">Design Systems</span><span class="chip">3D Modeling</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects">
+      <div class="container">
+        <span class="kicker reveal">02 — Selected Work</span>
+        <h2 class="section-title reveal" data-delay="1">Projects with depth</h2>
+        <p class="section-sub reveal" data-delay="2">A few flagship builds — hover to tilt, click to explore case
+          studies.</p>
+        <div class="projects-grid">
+          <article class="card reveal" data-delay="1">
+            <div class="card-visual cv-1">01</div>
+            <div class="card-body">
+              <h3>Nebula Commerce</h3>
+              <p>3D product configurator with real-time material previews. Lifted conversion 34%.</p>
+              <div class="tags"><span class="tag">Three.js</span><span class="tag">React</span><span
+                  class="tag">GLSL</span></div>
+            </div>
+          </article>
+          <article class="card reveal" data-delay="2">
+            <div class="card-visual cv-2">02</div>
+            <div class="card-body">
+              <h3>Pulse Analytics</h3>
+              <p>Live data visualization platform rendering 50k+ data points at 60fps.</p>
+              <div class="tags"><span class="tag">WebGL</span><span class="tag">D3</span><span
+                  class="tag">TypeScript</span></div>
+            </div>
+          </article>
+          <article class="card reveal" data-delay="3">
+            <div class="card-visual cv-3">03</div>
+            <div class="card-body">
+              <h3>Studio Mono</h3>
+              <p>Award-winning agency site with scroll-driven 3D narrative. FWA Site of the Day.</p>
+              <div class="tags"><span class="tag">GSAP</span><span class="tag">Blender</span><span
+                  class="tag">Next.js</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section id="achievements">
+      <div class="container">
+        <span class="kicker reveal">03 — Achievements</span>
+        <h2 class="section-title reveal" data-delay="1">The journey so far</h2>
+        <div class="timeline">
+          <div id="tl-fill"></div>
+          <div class="tl-item reveal">
+            <span class="tl-year">2026</span>
+            <h3>FWA Site of the Day</h3>
+            <p>Recognized for Studio Mono's scroll-driven 3D narrative experience.</p>
+          </div>
+          <div class="tl-item reveal" data-delay="1">
+            <span class="tl-year">2025</span>
+            <h3>Senior Creative Developer — Nova Studio</h3>
+            <p>Leading a team of four on interactive campaigns for global brands.</p>
+          </div>
+          <div class="tl-item reveal" data-delay="2">
+            <span class="tl-year">2024</span>
+            <h3>Awwwards Honorable Mention</h3>
+            <p>For experimental WebGL work pushing real-time rendering on the web.</p>
+          </div>
+          <div class="tl-item reveal" data-delay="3">
+            <span class="tl-year">2023</span>
+            <h3>First Three.js production launch</h3>
+            <p>Shipped an interactive museum exhibit viewed by 200k+ visitors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <span class="kicker reveal">04 — Contact</span>
+        <h2 class="reveal" data-delay="1">Let's build something <span style="color:var(--accent)">alive</span>.</h2>
+        <p class="reveal" data-delay="2">Open for freelance and full-time opportunities. I usually reply within 24
+          hours.</p>
+        <div class="btn-row reveal" data-delay="3" style="justify-content:center">
+          <a class="btn btn-primary" href="mailto:macaraigjohnroyce@gmail.com">
+            macaraigjohnroyce@gmail.com
+          </a>
+          <a class="btn btn-ghost" href="#">Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="socials">
+        <a href="https://github.com/Royce-Bot">GitHub</a>
+        <a href="https://www.facebook.com/itzme.royce">Facebook</a>
+        <a href="https://x.com/your-username">X</a>
+        <a href="https://www.instagram.com/roycemacaraig">Instagram</a>
+        <a href="tel:09925152521">Call me</a>
+      </div>
+      © 2026 John Royce Macaraig — Crafted with Three.js &amp; too much coffee.
+    </div>
+  </footer>
+
+  <!-- ============ THREE.JS SCENE ============ -->
+  <script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+  <script type="module" src="script.js"></script>
+
+  <!-- ============ UI LOGIC (no dependencies) ============ -->
+
+</body>
+
+</html>
