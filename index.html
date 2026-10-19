@@ -1,106 +1,290 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Royce — Creative Developer</title>
-  <meta name="description"
-    content="Portfolio of John Royce — creative developer crafting immersive 3D web experiences.">
-
-  <!-- ============ FONTS ============ -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet">
-
-  <!-- ============ DESIGN TOKENS / STYLES ============ -->
-  <link rel="stylesheet" href="styles.css">
-
-
-  <link rel="icon" href="image/jr-logo.svg" type="image/svg+xml">
-</head>
-
-<body>
-
-  <a class="skip-link" href="#top">Skip to content</a>
-  <!-- ============ 3D CANVAS (fixed, persistent) ============ -->
-  <canvas id="webgl" aria-hidden="true"></canvas>
-  <div class="vignette" aria-hidden="true"></div>
-
-  <div id="progress" aria-hidden="true"></div>
-
-  <!-- ============ NAV ============ -->
-  <nav id="nav">
-    <div class="nav-inner">
-      <a class="logo" href="#top">ROYCE<span>.</span>WEB</a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button id="menu-btn" aria-label="Toggle menu" aria-controls="nav-links" aria-expanded="false">☰</button>
-    </div>
-  </nav>
-
-  <main id="top">
-
-    <!-- ============ HERO ============ -->
-    <section class="hero">
-      <div class="container hero-content">
-        <span class="kicker reveal">John Royce Macaraig / Web Developer &amp; IT Student</span>
-        <h1 class="reveal" data-delay="1">
-          I build <span class="grad">practical</span><br>
-          web applications.
-        </h1>
-        <p class="reveal" data-delay="2">
-          I create responsive websites, web applications, REST APIs, and
-          database-driven systems using Laravel, PHP, JavaScript, Node.js,
-          and PostgreSQL.
-        </p>
-        <div class="btn-row reveal" data-delay="3">
-          <a class="btn btn-primary" href="#projects">
-            View Projects →
-          </a>
-          <a class="btn btn-ghost" href="#contact">
-            Get in Touch
-          </a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08080b">
+    <title>John Royce — Web Developer &amp; IT Student</title>
+    <meta name="description" content="John Royce Macaraig's portfolio. Thoughtful websites, practical web applications, REST APIs, and database-driven systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="image/jr-logo.svg" type="image/svg+xml">
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to content</a>
+    <div id="progress" aria-hidden="true"></div>
+    <nav id="nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a class="logo" href="#top" aria-label="Royce home">royce<span>.</span></a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#top" data-section="top" aria-current="page">portfolio</a></li>
+          <li><a href="#about">about me</a></li>
+          <li><a href="#projects">my work</a></li>
+          <li><a href="#achievements">the journey</a></li>
+          <li><a href="#contact">contact me</a></li>
+        </ul>
+        <div class="nav-socials">
+          <a href="https://github.com/Royce-Bot" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">gh</a>
+          <a href="https://www.facebook.com/itzme.royce" target="_blank" rel="noopener noreferrer" aria-label="Facebook (opens in a new tab)">fb</a>
+          <a href="https://www.instagram.com/roycemacaraig" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)">ig</a>
         </div>
+        <button id="menu-btn" type="button" aria-label="Toggle menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
       </div>
-      <div class="scene-controls"><span id="scene-status" role="status">Loading interactive 3D?</span><button id="scene-toggle" hidden aria-pressed="false">Pause animation</button></div><div class="scroll-hint">Scroll to explore</div>
-    </section>
-
-    <!-- ============ ABOUT ============ -->
-    <section id="about">
-      <div class="container">
-        <span class="kicker reveal">01 — About</span>
-        <h2 class="section-title reveal" data-delay="1">
-          Web Developer & IT Student
-        </h2>
-
-        <div class="about-grid" style="margin-top:44px">
-          <div class="portrait reveal">
-            <img src="image/image01.jpg" alt="Portrait of John Royce">
+    </nav>
+    <main>
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-glow glow-purple" aria-hidden="true"></div>
+        <div class="hero-glow glow-pink" aria-hidden="true"></div>
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <p class="hello reveal">Hello world, I'm</p>
+              <h1 class="reveal" id="hero-title">royce<span class="name-dot">.</span><span class="name-spark" aria-hidden="true"></span></h1>
+              <p class="hero-role reveal">Web developer. IT student. Curious mind.</p>
+              <p class="hero-description reveal">Turning ideas into thoughtful websites and practical web applications. A little creativity, a lot of code, and a focus on making things work.</p>
+              <div class="hero-actions reveal">
+                <a class="btn btn-primary" href="#contact">Let's build something <span aria-hidden="true">↗</span></a>
+                <a class="text-link" href="#projects">Explore my work <span aria-hidden="true">↘</span></a>
+              </div>
+            </div>
+            <div class="hero-art" aria-label="Creative marble hand surrounded by development skills" role="img">
+              <div class="art-halo" aria-hidden="true"></div>
+              <span class="art-cross cross-one" aria-hidden="true">+</span>
+              <span class="art-cross cross-two" aria-hidden="true">+</span>
+              <svg class="skill-connectors" viewBox="0 0 550 560" fill="none" aria-hidden="true">
+                <path d="M75 130H175L215 170"/>
+                <path d="M365 98L405 58H495"/>
+                <path d="M390 190L435 150H510"/>
+                <path d="M72 260H155L205 300"/>
+                <path d="M368 335H475"/>
+                <path d="M350 422H505"/>
+                <circle cx="215" cy="170" r="3"/>
+                <circle cx="365" cy="98" r="3"/>
+                <circle cx="390" cy="190" r="3"/>
+                <circle cx="205" cy="300" r="3"/>
+                <circle cx="368" cy="335" r="3"/>
+                <circle cx="350" cy="422" r="3"/>
+              </svg>
+              <img class="hand-image" src="image/creative-hand.png" width="1024" height="1536" alt="" fetchpriority="high">
+              <span class="skill-label label-strategy">Creative thinking</span>
+              <span class="skill-label label-design">Responsive web</span>
+              <span class="skill-label label-app">Web apps</span>
+              <span class="skill-label label-web">REST APIs</span>
+              <span class="skill-label label-data">Databases</span>
+              <span class="skill-label label-network">Networking</span>
+            </div>
           </div>
-
-          <div>
-            <p class="reveal">
-              I'm Royce — a Web Developer and IT student who builds responsive websites,
-              web applications, REST APIs, and database-driven systems. I work with
-              technologies such as Laravel, PHP, JavaScript, Node.js, PostgreSQL, and
-              MySQL, with a strong interest in creating practical and user-friendly
-              digital solutions.
-            </p>
-
+          <div class="hero-bottom">
+            <div class="personal-note reveal">
+              <span class="note-mark" aria-hidden="true">“</span>
+              <p>Good websites should look great.<br>And work even better.</p>
+              <span class="note-name">John Royce Macaraig</span>
+              <span class="note-caption">The thought behind every build.</span>
+            </div>
+            <div class="stat-composition" aria-label="Portfolio at a glance">
+              <a class="stat stat-projects" href="#projects"><strong>04<span>↗</span></strong><span>featured projects</span></a>
+              <a class="stat stat-focus" href="#about"><strong>03<span>↗</span></strong><span>areas of focus</span></a>
+              <a class="stat stat-code" href="#projects"><strong>&lt;/&gt;</strong><span>ideas brought to life</span></a>
+              <a class="stat stat-learning" href="#achievements"><strong>Always<span>↗</span></strong><span>learning &amp; building</span></a>
+            </div>
+            <a class="scroll-hint" href="#projects"><span>SCROLL TO EXPLORE</span><span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="work-section" aria-labelledby="work-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <span class="kicker">01 / SELECTED WORK</span>
+              <h2 id="work-title" class="section-title">Less talk.<br>More <em>making.</em></h2>
+            </div>
+            <p class="section-sub">From the interface to the database.<br>A few things I've been building.</p>
+          </div>
+          <div class="project-toolbar">
+            <div class="filters" role="group" aria-label="Filter projects">
+              <button type="button" data-filter="all" aria-pressed="true">All projects <span>04</span></button>
+              <button type="button" data-filter="web" aria-pressed="false">Web apps</button>
+              <button type="button" data-filter="backend" aria-pressed="false">Backend &amp; APIs</button>
+              <button type="button" data-filter="network" aria-pressed="false">IT &amp; networking</button>
+            </div>
+            <span id="project-count" role="status" aria-live="polite">4 projects</span>
+          </div>
+          <div class="projects-grid">
+            <article class="card" data-category="web">
+              <div class="card-visual cv-1" aria-hidden="true">
+                <span class="preview-label">INTERFACE CONCEPT / 01</span>
+                <div class="dashboard-preview">
+                  <div class="preview-sidebar">
+                    <b>stud<span>io.</span></b>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                  <div class="preview-main">
+                    <div class="preview-topline">
+                      <b>A little more organized.</b>
+                      <span>+</span>
+                    </div>
+                    <div class="preview-metrics">
+                      <div>
+                        <small>Students</small>
+                        <b>Overview</b>
+                      </div>
+                      <div>
+                        <small>Schedules</small>
+                        <b>This week</b>
+                      </div>
+                    </div>
+                    <div class="preview-chart">
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                      <i></i>
+                    </div>
+                    <div class="preview-lines">
+                      <i></i>
+                      <i></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="project-meta">FULL-STACK DEVELOPMENT <span>01 ↗</span></p>
+                <h3>Student &amp; Scheduling Systems</h3>
+                <p>Bringing student information, schedules, and everyday activities into one organized place.</p>
+                <div class="tags">
+                  <span>Laravel</span>
+                  <span>PHP</span>
+                  <span>PostgreSQL</span>
+                </div>
+                <details>
+                  <summary>Behind the build <span aria-hidden="true">＋</span></summary>
+                  <p>Database-driven web applications using Laravel, PHP, JavaScript, HTML, CSS, and PostgreSQL. These projects focus on managing student information, schedules, and workplace activities.</p>
+                </details>
+              </div>
+            </article>
+            <article class="card" data-category="web backend">
+              <div class="card-visual cv-2" aria-hidden="true">
+                <span class="preview-label">INTERFACE CONCEPT / 02</span>
+                <div class="search-preview">
+                  <span class="book-mark">b<span>&amp;</span>e.</span>
+                  <h4>A world of words.<br>One simple search.</h4>
+                  <div class="preview-search">Search the writings <span>↗</span></div>
+                  <div class="search-result">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="project-meta">SEARCH &amp; DATABASES <span>02 ↗</span></p>
+                <h3>Bible &amp; EGW Search Engine</h3>
+                <p>Making the Bible and Ellen G. White writings easier to explore with full-text search.</p>
+                <div class="tags">
+                  <span>PHP</span>
+                  <span>PostgreSQL</span>
+                  <span>Full-text search</span>
+                </div>
+                <details>
+                  <summary>Behind the build <span aria-hidden="true">＋</span></summary>
+                  <p>A PHP and PostgreSQL search engine implementing database queries and full-text search across Bible and Ellen G. White writings, with a focus on finding relevant content.</p>
+                </details>
+              </div>
+            </article>
+            <article class="card" data-category="backend">
+              <div class="card-visual cv-3" aria-hidden="true">
+                <span class="preview-label">CODE CONCEPT / 03</span>
+                <div class="code-preview">
+                  <div class="code-top">
+                    <span><i></i><i></i><i></i></span>
+                    <span>response.json</span>
+                  </div>
+                  <div class="code-request"><span>GET</span> /api/resources <b>200 OK</b></div>
+                  <pre>{
+  <span>"status"</span>: <em>"success"</em>,
+  <span>"message"</span>: <em>"Ideas, connected."</em>,
+  <span>"data"</span>: [<b> ... </b>]
+}</pre>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="project-meta">BACKEND DEVELOPMENT <span>03 ↗</span></p>
+                <h3>REST API Projects</h3>
+                <p>The work behind the screen. Structured services that help applications communicate.</p>
+                <div class="tags">
+                  <span>Node.js</span>
+                  <span>Express.js</span>
+                  <span>Postman</span>
+                </div>
+                <details>
+                  <summary>Behind the build <span aria-hidden="true">＋</span></summary>
+                  <p>RESTful APIs built with Node.js and Express, covering create, read, update, and delete operations, authentication, structured JSON responses, and testing with Postman.</p>
+                </details>
+              </div>
+            </article>
+            <article class="card" data-category="network">
+              <div class="card-visual cv-4" aria-hidden="true">
+                <span class="preview-label">NETWORK CONCEPT / 04</span>
+                <div class="network-preview">
+                  <svg viewBox="0 0 400 200" fill="none">
+                    <path d="M200 42V100M200 100H70V155M200 100H330V155M200 100V165" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 5"/>
+                    <rect x="171" y="14" width="58" height="42" rx="8"/>
+                    <rect x="47" y="144" width="46" height="32" rx="5"/>
+                    <rect x="177" y="154" width="46" height="32" rx="5"/>
+                    <rect x="307" y="144" width="46" height="32" rx="5"/>
+                    <path d="M186 29H214M186 39H202M59 156H81M59 163H73M189 166H211M189 173H203M319 156H341M319 163H333" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="200" cy="100" r="7"/>
+                  </svg>
+                  <span>CONNECTED BY DESIGN.</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <p class="project-meta">IT &amp; NETWORKING <span>04 ↗</span></p>
+                <h3>Networks &amp; Virtual Environments</h3>
+                <p>Exploring the connections that keep systems running, from routing to virtual machines.</p>
+                <div class="tags">
+                  <span>Packet Tracer</span>
+                  <span>Routing</span>
+                  <span>Virtual machines</span>
+                </div>
+                <details>
+                  <summary>Behind the build <span aria-hidden="true">＋</span></summary>
+                  <p>Hands-on Cisco network configuration using DHCP, RIP, OSPF, EIGRP, and VLAN concepts, alongside working with virtual machine environments and database-driven applications.</p>
+                </details>
+              </div>
+            </article>
+          </div>
+          <a class="github-work" href="https://github.com/Royce-Bot" target="_blank" rel="noopener noreferrer">There's more on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+      <section id="about" aria-labelledby="about-title">
+        <div class="container about-grid">
+          <div class="portrait-wrap reveal">
+            <div class="portrait">
+              <img src="image/image01.jpg" alt="John Royce Macaraig standing on a covered walkway" width="1080" height="1080" loading="lazy">
+            </div>
+            <span class="portrait-label">JOHN ROYCE MACARAIG</span>
+            <span class="portrait-star" aria-hidden="true">✳</span>
+          </div>
+          <div class="about-copy">
+            <span class="kicker">02 / THE PERSON BEHIND THE CODE</span>
+            <h2 id="about-title" class="section-title">Curiosity is<br>my <em>starting point.</em></h2>
+            <p>I'm Royce, a web developer and IT student. I enjoy figuring out how things work, then turning that understanding into something useful.</p>
+            <p>My work spans responsive websites, web applications, REST APIs, and database-driven systems. I care about the details people see and the systems that make everything run.</p>
             <div class="skill-groups">
-
-              <div class="skill-group reveal" data-delay="1">
-                <h3>Development</h3>
+              <div class="skill-group">
+                <h3><span>01</span> Development</h3>
                 <div class="chips">
-                  <span class="chip">HTML</span>
-                  <span class="chip">CSS</span>
+                  <span class="chip">HTML &amp; CSS</span>
                   <span class="chip">JavaScript</span>
                   <span class="chip">PHP</span>
                   <span class="chip">Laravel</span>
@@ -108,139 +292,88 @@
                   <span class="chip">Express.js</span>
                 </div>
               </div>
-
-              <div class="skill-group reveal" data-delay="2">
-                <h3>Database & Tools</h3>
+              <div class="skill-group">
+                <h3><span>02</span> Databases &amp; tools</h3>
                 <div class="chips">
                   <span class="chip">PostgreSQL</span>
                   <span class="chip">MySQL</span>
-                  <span class="chip">Git</span>
-                  <span class="chip">GitHub</span>
+                  <span class="chip">Git &amp; GitHub</span>
                   <span class="chip">Postman</span>
                   <span class="chip">VS Code</span>
                 </div>
               </div>
-
-              <div class="skill-group reveal" data-delay="3">
-                <h3>IT & Networking</h3>
+              <div class="skill-group">
+                <h3><span>03</span> IT &amp; networking</h3>
                 <div class="chips">
                   <span class="chip">Cisco Packet Tracer</span>
                   <span class="chip">DHCP</span>
-                  <span class="chip">RIP</span>
-                  <span class="chip">OSPF</span>
-                  <span class="chip">EIGRP</span>
-                  <span class="chip">Virtual Machines</span>
+                  <span class="chip">RIP / OSPF / EIGRP</span>
+                  <span class="chip">Virtual machines</span>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ PROJECTS ============ -->
-    <section id="projects">
-      <div class="container">
-        <span class="kicker reveal">02 — Selected Work</span>
-        <h2 class="section-title reveal" data-delay="1">Real projects. Practical solutions.</h2>
-        <p class="section-sub reveal" data-delay="2">A few flagship builds — hover to tilt, click to explore case
-          studies.</p>
-<div class="project-toolbar"><div class="filters" role="group" aria-label="Filter projects"><button data-filter="all" aria-pressed="true">All projects</button><button data-filter="web" aria-pressed="false">Web apps</button><button data-filter="backend" aria-pressed="false">Backend &amp; APIs</button><button data-filter="network" aria-pressed="false">IT &amp; networking</button></div><span id="project-count" role="status">4 projects</span></div><div class="projects-grid"><article class="card" data-category="web"><div class="card-visual cv-1" aria-hidden="true"><span>&lt;/&gt;</span><small>FULL-STACK SYSTEMS</small></div><div class="card-body"><p class="project-meta">WEB APPLICATION <span>01</span></p><h3>Student &amp; Scheduling Systems</h3><p>Database-driven applications for managing students, schedules, and workplace activities.</p><div class="tags project-tags"><span>Laravel</span><span>PHP</span><span>PostgreSQL</span></div><details><summary>Explore the project <span>＋</span></summary><p>Full-stack web applications using Laravel, PHP, JavaScript, HTML, CSS, and PostgreSQL. This work focuses on managing student information, schedules, and everyday activities.</p></details></div></article>
-<article class="card" data-category="web backend"><div class="card-visual cv-2" aria-hidden="true"><span>?</span><small>FULL-TEXT SEARCH</small></div><div class="card-body"><p class="project-meta">SEARCH &amp; DATABASES <span>02</span></p><h3>Bible &amp; EGW Search Engine</h3><p>A full-text search engine for exploring the Bible and Ellen G. White writings.</p><div class="tags project-tags"><span>PHP</span><span>PostgreSQL</span><span>Full-text search</span></div><details><summary>Explore the project <span>＋</span></summary><p>A PHP and PostgreSQL project implementing database queries and full-text search across Bible and Ellen G. White writings. Focused on querying text and finding relevant content.</p></details></div></article>
-<article class="card" data-category="backend"><div class="card-visual cv-3" aria-hidden="true"><span>{ }</span><small>RESTFUL SERVICES</small></div><div class="card-body"><p class="project-meta">BACKEND DEVELOPMENT <span>03</span></p><h3>REST API Projects</h3><p>Backend services with CRUD operations, authentication, and structured JSON responses.</p><div class="tags project-tags"><span>Node.js</span><span>Express.js</span><span>Postman</span></div><details><summary>Explore the project <span>＋</span></summary><p>RESTful APIs built with Node.js and Express, covering create, read, update, and delete operations, authentication, JSON data handling, and testing with Postman.</p></details></div></article>
-<article class="card" data-category="network"><div class="card-visual cv-1" aria-hidden="true"><span>?</span><small>NETWORKING & IT</small></div><div class="card-body"><p class="project-meta">IT &amp; NETWORKING <span>04</span></p><h3>Networking &amp; Virtual Environments</h3><p>Hands-on Cisco network configuration and virtual machine environments.</p><div class="tags project-tags"><span>Packet Tracer</span><span>Routing</span><span>Virtual Machines</span></div><details><summary>Explore the project <span>＋</span></summary><p>Experience configuring Cisco networks using DHCP, RIP, OSPF, EIGRP, and VLAN concepts, alongside working with database-driven applications and virtual machine environments.</p></details></div></article></div><a class="github-work" href="https://github.com/Royce-Bot" target="_blank" rel="noopener noreferrer">Explore more on GitHub ?</a>
-      </div>
-    </section>
-
-    <!-- ============ ACHIEVEMENTS ============ -->
-    <section id="achievements">
-      <div class="container">
-        <span class="kicker reveal">03 — Achievements</span>
-        <h2 class="section-title reveal" data-delay="1">The journey so far</h2>
-
-        <div class="timeline">
-          <div id="tl-fill"></div>
-
-          <div class="tl-item reveal">
-            <span class="tl-year">2026</span>
-            <h3>Full-Stack Web Development Projects</h3>
-            <p>
-              Built and developed full-stack web applications using Laravel, PHP,
-              JavaScript, HTML, CSS, and PostgreSQL, including systems for managing
-              students, schedules, and workplace activities.
-            </p>
+      </section>
+      <section id="achievements" aria-labelledby="journey-title">
+        <div class="container journey-grid">
+          <div class="journey-heading">
+            <span class="kicker">03 / LEARNING BY DOING</span>
+            <h2 id="journey-title" class="section-title">A work<br>in <em>progress.</em></h2>
+            <p class="section-sub">Every project brings a new question.<br>Here's where those questions have led.</p>
+            <span class="journey-asterisk" aria-hidden="true">✳</span>
           </div>
-
-          <div class="tl-item reveal" data-delay="1">
-            <span class="tl-year">2026</span>
-            <h3>PostgreSQL Search Engine Project</h3>
-            <p>
-              Developed a PHP and PostgreSQL-based search engine for Bible and
-              Ellen G. White writings, implementing database queries and
-              full-text search functionality.
-            </p>
-          </div>
-
-          <div class="tl-item reveal" data-delay="2">
-            <span class="tl-year">2025</span>
-            <h3>REST API & Backend Development</h3>
-            <p>
-              Created RESTful APIs using Node.js and Express, including CRUD
-              operations, authentication, JSON data handling, and API testing
-              with Postman.
-            </p>
-          </div>
-
-          <div class="tl-item reveal" data-delay="3">
-            <span class="tl-year">2025</span>
-            <h3>Networking & Database Projects</h3>
-            <p>
-              Gained hands-on experience configuring Cisco networks using DHCP,
-              RIP, OSPF, EIGRP, and VLAN concepts while also developing
-              database-driven applications and virtual machine environments.
-            </p>
+          <div class="timeline">
+            <div id="tl-fill" aria-hidden="true"></div>
+            <div class="tl-item">
+              <span class="tl-year">2026</span>
+              <h3>Building across the stack</h3>
+              <p>Full-stack applications with Laravel, PHP, JavaScript, and PostgreSQL for student information, schedules, and workplace activities.</p>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year">2026</span>
+              <h3>Finding meaning in the data</h3>
+              <p>A Bible and Ellen G. White search engine, exploring PostgreSQL queries and full-text search with PHP.</p>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year">2025</span>
+              <h3>Connecting the pieces</h3>
+              <p>REST APIs with Node.js and Express: CRUD operations, authentication, JSON responses, and API testing with Postman.</p>
+            </div>
+            <div class="tl-item">
+              <span class="tl-year">2025</span>
+              <h3>Understanding the foundations</h3>
+              <p>Cisco networks, routing protocols, database projects, and virtual environments. Getting familiar with what happens underneath.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ CONTACT ============ -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <span class="kicker reveal">04 — Contact</span>
-        <h2 class="reveal" data-delay="1">Let's build something <span style="color:var(--accent)">alive</span>.</h2>
-        <p class="reveal" data-delay="2">Have a project, a collaboration, or a question? Let?s start a conversation.</p>
-        <div class="btn-row reveal" data-delay="3" style="justify-content:center">
-          <a class="btn btn-primary" href="mailto:macaraigjohnroyce@gmail.com">
-            macaraigjohnroyce@gmail.com
-          </a>
-          <button class="btn btn-ghost" id="copy-email">Copy email</button>
+      </section>
+      <section id="contact" class="contact" aria-labelledby="contact-title">
+        <div class="container">
+          <span class="kicker">04 / LET'S MAKE IT HAPPEN</span>
+          <h2 id="contact-title">Your next idea.<br>Our next <em>conversation.</em></h2>
+          <p>A project, a collaboration, or just a hello.<br>I'd love to hear what you have in mind.</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="mailto:macaraigjohnroyce@gmail.com">Say hello <span aria-hidden="true">↗</span></a>
+            <button type="button" class="copy-email" id="copy-email">Copy email <span aria-hidden="true">⧉</span></button>
+          </div>
+          <a class="email-address" href="mailto:macaraigjohnroyce@gmail.com">macaraigjohnroyce@gmail.com</a>
+          <p id="copy-status" role="status" aria-live="polite"></p>
         </div>
-        <p id="copy-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-inner">
+        <a class="logo" href="#top" aria-label="Back to top">royce<span>.</span></a>
+        <p>© 2026 John Royce Macaraig</p>
+        <div class="socials">
+          <a href="https://github.com/Royce-Bot" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a href="https://www.facebook.com/itzme.royce" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+          <a href="https://www.instagram.com/roycemacaraig" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="tel:09925152521">Call me ↗</a>
+        </div>
       </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="socials">
-        <a href="https://github.com/Royce-Bot">GitHub</a>
-        <a href="https://www.facebook.com/itzme.royce">Facebook</a>
-        <a href="https://www.instagram.com/roycemacaraig">Instagram</a>
-        <a href="tel:09925152521">Call me</a>
-      </div>
-      © 2026 John Royce Macaraig — Built with curiosity, code &amp; Three.js.
-    </div>
-  </footer>
-
-  <!-- ============ THREE.JS SCENE ============ -->
-  <script src="script.js" defer></script>
-  <script src="scene.js" defer></script>
-
-  <!-- ============ UI LOGIC (no dependencies) ============ -->
-
-</body>
-
+    </footer>
+    <script src="script.js" defer></script>
+  </body>
 </html>
